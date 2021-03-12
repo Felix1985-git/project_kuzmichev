@@ -1,4 +1,4 @@
-package academy.belhard.dbWriter;
+package academy.belhard.db.writer;
 
 import academy.belhard.entity.Plane;
 import academy.belhard.util.ConnectionUtil;
@@ -15,7 +15,7 @@ public class PlaneWriter {
 
     public static void write(List<Plane> planes) {
         Connection connection = ConnectionUtil.getConnection();
-        System.out.println("Старт записи в таблицу [planes]");
+        System.out.println(String.format(WriterConstants.WRITE_START, "planes"));
 
         for (Plane plane : planes) {
             try (PreparedStatement statement = connection.prepareStatement(INSERT)) {
@@ -31,6 +31,6 @@ public class PlaneWriter {
             }
         }
         planes.forEach(System.out::println);
-        System.out.println("Запись в таблицу [planes] завершена");
+        System.out.println(String.format(WriterConstants.WRITE_STOP, "planes"));
     }
 }

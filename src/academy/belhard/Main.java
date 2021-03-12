@@ -1,13 +1,14 @@
 package academy.belhard;
 
-import academy.belhard.dataReader.FlightDataReader;
-import academy.belhard.dataReader.PilotDataReader;
-import academy.belhard.dataReader.PlaneDataReader;
-import academy.belhard.dataWriter.FullInfoWriter;
-import academy.belhard.dbReader.FullDataReader;
-import academy.belhard.dbWriter.FlightWriter;
-import academy.belhard.dbWriter.PilotWriter;
-import academy.belhard.dbWriter.PlaneWriter;
+
+import academy.belhard.data.reader.FlightDataReader;
+import academy.belhard.data.reader.PilotDataReader;
+import academy.belhard.data.reader.PlaneDataReader;
+import academy.belhard.data.writer.FullInfoWriter;
+import academy.belhard.db.reader.FullDataReader;
+import academy.belhard.db.writer.FlightWriter;
+import academy.belhard.db.writer.PilotWriter;
+import academy.belhard.db.writer.PlaneWriter;
 import academy.belhard.entity.Flight;
 import academy.belhard.entity.FullData;
 import academy.belhard.entity.Pilot;

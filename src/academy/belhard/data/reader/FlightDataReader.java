@@ -1,4 +1,4 @@
-package academy.belhard.dataReader;
+package academy.belhard.data.reader;
 
 import academy.belhard.builder.FlightBuilder;
 import academy.belhard.entity.Flight;
@@ -31,10 +31,10 @@ public class FlightDataReader implements FileDataReader<Flight> {
                 flights.add(flight);
             }
             if (flights.size() == 0) {
-                throw new EmptyDataFileException("Файл для чтения пуст");
+                throw new EmptyDataFileException(fileName, "пуст");
             }
         } catch (FileNotFoundException e) {
-            throw new EmptyDataFileException("Файл для чтения не найден");
+            throw new EmptyDataFileException(fileName ,"не найден");
         } catch (IOException e) {
             e.getMessage();
         }

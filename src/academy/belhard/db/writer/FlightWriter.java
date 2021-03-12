@@ -1,4 +1,4 @@
-package academy.belhard.dbWriter;
+package academy.belhard.db.writer;
 
 import academy.belhard.entity.Flight;
 import academy.belhard.util.ConnectionUtil;
@@ -6,6 +6,8 @@ import academy.belhard.util.ConnectionUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -15,14 +17,14 @@ public class FlightWriter {
 
     public static void write(List<Flight> flights) {
         Connection connection = ConnectionUtil.getConnection();
-        System.out.println("Старт записи в таблицу [flights]");
+        System.out.println(String.format(WriterConstants.WRITE_START, "flights"));
 
         for (Flight flight : flights) {
             try (PreparedStatement statement = connection.prepareStatement(INSERT)) {
                 statement.setInt(1, flight.getId());
                 statement.setInt(2, flight.getPlanesId());
                 statement.setInt(3, flight.getPilotsId());
-                statement.setDate(4, (java.sql.Date) flight.getDate());
+                statement.setDate(4, flight.getDate());
                 statement.setTime(5, flight.getTime());
                 statement.setString(6, flight.getNumber());
 
@@ -32,6 +34,6 @@ public class FlightWriter {
             }
         }
         flights.forEach(System.out::println);
-        System.out.println("Запись в таблицу [flights] завершена");
+        System.out.println(String.format(WriterConstants.WRITE_STOP, "flights"));
     }
 }

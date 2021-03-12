@@ -1,4 +1,4 @@
-package academy.belhard.dataReader;
+package academy.belhard.data.reader;
 
 import academy.belhard.exception.EmptyDataFileException;
 

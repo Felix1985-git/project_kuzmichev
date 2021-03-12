@@ -5,7 +5,7 @@ import academy.belhard.validator.PlaneValidator;
 
 public class PlaneBuilder {
     public static Plane build(String planesLine) {
-        String[] planesData = planesLine.split(";");
+        String[] planesData = planesLine.split(CsvConstants.CSV_DELIMITER);
 
         int id = Integer.parseInt(planesData[0]);
         String brand = planesData[1];

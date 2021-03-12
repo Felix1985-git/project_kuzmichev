@@ -6,7 +6,7 @@ import academy.belhard.validator.PilotValidator;
 
 public class PilotBuilder {
     public static Pilot build(String pilotLine) {
-        String[] pilotData = pilotLine.split(";");
+        String[] pilotData = pilotLine.split(CsvConstants.CSV_DELIMITER);
 
         int id = Integer.parseInt(pilotData[0]);
         String firstName = pilotData[1];

@@ -8,7 +8,7 @@ import java.sql.Time;
 
 public class FlightBuilder {
     public static Flight build(String flightsLine) {
-        String[] flightsData = flightsLine.split(";");
+        String[] flightsData = flightsLine.split(CsvConstants.CSV_DELIMITER);
 
         int id = Integer.parseInt(flightsData[0]);
         Integer planesId = Integer.valueOf(flightsData[1]);

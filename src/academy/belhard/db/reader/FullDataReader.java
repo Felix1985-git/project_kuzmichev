@@ -1,4 +1,4 @@
-package academy.belhard.dbReader;
+package academy.belhard.db.reader;
 
 import academy.belhard.entity.FullData;
 import academy.belhard.util.ConnectionUtil;
